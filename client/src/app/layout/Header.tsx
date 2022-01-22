@@ -2,14 +2,18 @@ import { ShoppingCart } from "@mui/icons-material";
 import {
   AppBar,
   Badge,
+  Button,
   IconButton,
   List,
   ListItem,
+  Menu,
+  MenuItem,
   Switch,
   Toolbar,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, textTransform } from "@mui/system";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 interface Props {
@@ -21,8 +25,11 @@ const midLinks = [
   { title: "Catalog", path: "/catalog" },
   { title: "About", path: "/about" },
   { title: "Contact", path: "/contact" },
+];
+
+const subMenu = [
   { title: "Calories Calculator", path: "/calories_calculator" },
-  { title: "Carb Cycling Calculator", path: "/carb_cycling_calculator" },
+  { title: "Carb Cycling Calculator", path: "/carbs_cycling_calculator" },
 ];
 
 const rightLinks = [
@@ -43,6 +50,15 @@ const navStyles = [
 ];
 
 export default function Header({ darkMode, handleThemeChange }: Props) {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <AppBar position="static" sx={{ mb: 4 }}>
       <Toolbar
@@ -65,13 +81,58 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
           <Switch checked={darkMode} onChange={handleThemeChange} />
         </Box>
 
-        <List sx={{ display: "flex" }}>
-          {midLinks.map(({ title, path }) => (
-            <ListItem component={NavLink} to={path} key={path} sx={navStyles}>
-              {title}
+        <Box textTransform="none">
+          <List sx={{ display: "flex" }}>
+            {midLinks.map(({ title, path }) => (
+              <ListItem component={NavLink} to={path} key={path} sx={navStyles}>
+                {title}
+              </ListItem>
+            ))}
+            <ListItem>
+              <Button
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+                sx={{
+                  textTransform: "none",
+                  color: "inherit",
+                  typography: "h6",
+                  textDecoration: "none",
+                  "&:hover": { color: "grey.500" },
+                  "&.active": {
+                    color: "text.secondary",
+                  },
+                }}
+                size="small"
+              >
+                Calculators
+              </Button>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                {subMenu.map(({ title, path }) => (
+                  <MenuItem
+                    onClick={handleClose}
+                    component={NavLink}
+                    to={path}
+                    key={path}
+                    sx={navStyles}
+                  >
+                    {title}
+                  </MenuItem>
+                ))}
+              </Menu>
             </ListItem>
-          ))}
-        </List>
+          </List>
+        </Box>
 
         <Box display="flex" alignItems="center">
           <IconButton size="large" sx={{ color: "inherit" }}>
