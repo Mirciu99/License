@@ -4,7 +4,7 @@ import {
   CssBaseline,
   ThemeProvider,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import AboutPage from "../../features/about/AboutPage";
@@ -17,8 +17,29 @@ import HomePage from "../../features/home/HomePage";
 import Header from "./Header";
 import "react-toastify/dist/ReactToastify.css";
 import NotFound from "../errors/NotFound";
+import BasketPage from "../../features/basket/BasketPage";
+import { useStoreContext } from "../context/StoreContext";
+import { getCookie } from "../util/util";
+import agent from "../api/agent";
+import LoadingComponent from "./LoadingComponent";
+import CheckoutPage from "../../features/checkout/CheckoutPage";
 
 function App() {
+  const { setBasket } = useStoreContext();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const buyerId = getCookie("buyerId");
+    if (buyerId) {
+      agent.Basket.get()
+        .then((basket) => setBasket(basket))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
+    } else {
+      setLoading(false);
+    }
+  }, [setBasket]);
+
   const [darkMode, SetDarkMode] = useState(false);
   const paletteType = darkMode ? "dark" : "light";
   const theme = createTheme({
@@ -33,6 +54,8 @@ function App() {
   function handleThemeChange() {
     SetDarkMode(!darkMode);
   }
+
+  if (loading) return <LoadingComponent message="Initialising..." />;
 
   return (
     <ThemeProvider theme={theme}>
@@ -54,6 +77,8 @@ function App() {
             path="/carbs_cycling_calculator"
             component={CarbsCyclingCalculator}
           />
+          <Route path="/basket" component={BasketPage} />
+          <Route path="/checkout" component={CheckoutPage} />
           <Route component={NotFound} />
         </Switch>
       </Container>

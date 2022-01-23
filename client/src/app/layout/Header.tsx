@@ -14,7 +14,8 @@ import {
 } from "@mui/material";
 import { Box, textTransform } from "@mui/system";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useStoreContext } from "../context/StoreContext";
 
 interface Props {
   darkMode: boolean;
@@ -50,6 +51,9 @@ const navStyles = [
 ];
 
 export default function Header({ darkMode, handleThemeChange }: Props) {
+  const { basket } = useStoreContext();
+  const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0);
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -135,8 +139,13 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
         </Box>
 
         <Box display="flex" alignItems="center">
-          <IconButton size="large" sx={{ color: "inherit" }}>
-            <Badge badgeContent={4} color="secondary">
+          <IconButton
+            component={Link}
+            to={"/basket"}
+            size="large"
+            sx={{ color: "inherit" }}
+          >
+            <Badge badgeContent={itemCount} color="secondary">
               <ShoppingCart />
             </Badge>
           </IconButton>
