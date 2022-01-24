@@ -50,6 +50,7 @@ const Catalog = {
     details: (id:number) => request.get(`products/${id}`)
 }
 
+
 const TestErrors = {
     get400Error: () => request.get('buggy/bad-request'),
     get401Error: () => request.get('buggy/unauthorised'),

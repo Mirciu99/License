@@ -1,8 +1,8 @@
 import {
-  Container,
-  createTheme,
-  CssBaseline,
-  ThemeProvider,
+    Container,
+    createTheme,
+    CssBaseline,
+    ThemeProvider,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
@@ -18,72 +18,73 @@ import Header from "./Header";
 import "react-toastify/dist/ReactToastify.css";
 import NotFound from "../errors/NotFound";
 import BasketPage from "../../features/basket/BasketPage";
-import { useStoreContext } from "../context/StoreContext";
 import { getCookie } from "../util/util";
 import agent from "../api/agent";
 import LoadingComponent from "./LoadingComponent";
 import CheckoutPage from "../../features/checkout/CheckoutPage";
+import { useAppDispatch } from "../store/configureStore";
+import { setBasket } from "../../features/basket/BasketSlice";
 
 function App() {
-  const { setBasket } = useStoreContext();
-  const [loading, setLoading] = useState(true);
+    const dispatch = useAppDispatch();
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const buyerId = getCookie("buyerId");
-    if (buyerId) {
-      agent.Basket.get()
-        .then((basket) => setBasket(basket))
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(false));
-    } else {
-      setLoading(false);
+    useEffect(() => {
+        const buyerId = getCookie("buyerId");
+        if (buyerId) {
+            agent.Basket.get()
+                .then((basket) => dispatch(setBasket(basket)))
+                .catch((error) => console.log(error))
+                .finally(() => setLoading(false));
+        } else {
+            setLoading(false);
+        }
+    }, [dispatch]);
+
+    const [darkMode, SetDarkMode] = useState(false);
+    const paletteType = darkMode ? "dark" : "light";
+    const theme = createTheme({
+        palette: {
+            mode: paletteType,
+            background: {
+                default: paletteType === "light" ? "#eaeaea" : "#121212",
+            },
+        },
+    });
+
+    function handleThemeChange() {
+        SetDarkMode(!darkMode);
     }
-  }, [setBasket]);
 
-  const [darkMode, SetDarkMode] = useState(false);
-  const paletteType = darkMode ? "dark" : "light";
-  const theme = createTheme({
-    palette: {
-      mode: paletteType,
-      background: {
-        default: paletteType === "light" ? "#eaeaea" : "#121212",
-      },
-    },
-  });
+    if (loading) return <LoadingComponent message="Initialising..." />;
 
-  function handleThemeChange() {
-    SetDarkMode(!darkMode);
-  }
-
-  if (loading) return <LoadingComponent message="Initialising..." />;
-
-  return (
-    <ThemeProvider theme={theme}>
-      <ToastContainer position="bottom-right" hideProgressBar />
-      <CssBaseline />
-      <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
-      <Container>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/catalog" component={Catalog} />
-          <Route path="/catalog/:id" component={ProductDetails} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route
-            path="/calories_calculator"
-            component={CaloriesCalculatorPage}
-          />
-          <Route
-            path="/carbs_cycling_calculator"
-            component={CarbsCyclingCalculator}
-          />
-          <Route path="/basket" component={BasketPage} />
-          <Route path="/checkout" component={CheckoutPage} />
-          <Route component={NotFound} />
-        </Switch>
-      </Container>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <ToastContainer position="bottom-right" hideProgressBar />
+            <CssBaseline />
+            <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
+            <Container>
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route exact path="/catalog" component={Catalog} />
+                    <Route path="/catalog/:id" component={ProductDetails} />
+                    <Route path="/about" component={AboutPage} />
+                    <Route path="/contact" component={ContactPage} />
+                    <Route
+                        path="/calories_calculator"
+                        component={CaloriesCalculatorPage}
+                    />
+                    <Route
+                        path="/carbs_cycling_calculator"
+                        component={CarbsCyclingCalculator}
+                    />
+                    <Route path="/basket" component={BasketPage} />
+                    <Route path="/checkout" component={CheckoutPage} />
+                    <Route component={NotFound} />
+                </Switch>
+            </Container>
+        </ThemeProvider>
+    );
 }
 
 export default App;
