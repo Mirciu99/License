@@ -24,6 +24,10 @@ import LoadingComponent from "./LoadingComponent";
 import CheckoutPage from "../../features/checkout/CheckoutPage";
 import { useAppDispatch } from "../store/configureStore";
 import { setBasket } from "../../features/basket/BasketSlice";
+import Login from "../../features/account/Login";
+import Register from "../../features/account/Register";
+import { fetchCurrentUser } from "../../features/account/accountSlice";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
     const dispatch = useAppDispatch();
@@ -31,6 +35,7 @@ function App() {
 
     useEffect(() => {
         const buyerId = getCookie("buyerId");
+        //dispatch(fetchCurrentUser());
         if (buyerId) {
             agent.Basket.get()
                 .then((basket) => dispatch(setBasket(basket)))
@@ -79,7 +84,9 @@ function App() {
                         component={CarbsCyclingCalculator}
                     />
                     <Route path="/basket" component={BasketPage} />
-                    <Route path="/checkout" component={CheckoutPage} />
+                    <PrivateRoute path="/checkout" component={CheckoutPage} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/register" component={Register} />
                     <Route component={NotFound} />
                 </Switch>
             </Container>
