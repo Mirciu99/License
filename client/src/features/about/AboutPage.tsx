@@ -1,64 +1,34 @@
-import { Button, ButtonGroup, Container, Typography } from "@mui/material";
-import agent from "../../app/api/agent";
+import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import Slider from "react-slick";
 
 export default function AboutPage() {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
     return (
-        <Container>
-            <Typography gutterBottom variant="h2">
-                Errors for testing purpouse
-            </Typography>
-            <ButtonGroup fullWidth>
-                <Button
-                    variant="contained"
-                    onClick={() =>
-                        agent.TestErrors.get400Error().catch((error) =>
-                            console.log(error)
-                        )
-                    }
-                >
-                    Test 400 Error
-                </Button>
-                <Button
-                    variant="contained"
-                    onClick={() =>
-                        agent.TestErrors.get401Error().catch((error) =>
-                            console.log(error)
-                        )
-                    }
-                >
-                    Test 401 Error
-                </Button>
-                <Button
-                    variant="contained"
-                    onClick={() =>
-                        agent.TestErrors.get404Error().catch((error) =>
-                            console.log(error)
-                        )
-                    }
-                >
-                    Test 404 Error
-                </Button>
-                <Button
-                    variant="contained"
-                    onClick={() =>
-                        agent.TestErrors.get500Error().catch((error) =>
-                            console.log(error)
-                        )
-                    }
-                >
-                    Test 500 Error
-                </Button>
-                <Button
-                    variant="contained"
-                    onClick={() =>
-                        agent.TestErrors.getValidationError().catch((error) =>
-                            console.log(error)
-                        )
-                    }
-                >
-                    Test Validation Error
-                </Button>
-            </ButtonGroup>
-        </Container>
+        <>
+            <Slider {...settings}>
+                <div>
+                    <img
+                        src="/images/about1.jpg"
+                        alt="first"
+                        style={{
+                            display: "block",
+                            width: "100%",
+                            maxHeight: 500,
+                        }}
+                    />
+                </div>
+            </Slider>
+
+            <Box display="flex" justifyContent="center" sx={{ p: 4 }}>
+                <Typography variant="h1">Welcome to about page!</Typography>
+            </Box>
+        </>
     );
 }

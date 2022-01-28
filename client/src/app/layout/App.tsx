@@ -35,7 +35,7 @@ function App() {
 
     useEffect(() => {
         const buyerId = getCookie("buyerId");
-        //dispatch(fetchCurrentUser());
+        dispatch(fetchCurrentUser());
         if (buyerId) {
             agent.Basket.get()
                 .then((basket) => dispatch(setBasket(basket)))

@@ -37,186 +37,246 @@ namespace API.Data
 
             var products = new List<Product>
             {
-                new Product
+               new Product
                 {
-                    Name = "Impact Whey Isolate",
-                    Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                    Name = "The Whey",
+                    Description = "Only the finest ingredients have been used to create this powder, which delivers 26g of protein per 32g serving via “beadlets” that gradually release muscle-building BCAAs.",
                     Price = 20000,
-                    PictureUrl = "/images/products/S-proteine.png",
-                    Brand = "Angular",
-                    Type = "Boards",
+                    PictureUrl = "/images/products/Protein1.png",
+                    Brand = "MyProtein",
+                    Type = "Protein",
                     QuantityInStock = 100
                 },
                 new Product
                 {
-                    Name = "The Gainer",
-                    Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-                    Price = 15000,
-                    PictureUrl = "/images/products/S-gainer.png",
-                    Brand = "Angular",
-                    Type = "Boards",
+                    Name = "Impact Whey Protein",
+                    Description = "Premium whey with 21 g of protein per serving, for the proteins you need from a quality source.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein2.png",
+                    Brand = "MyProtein",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Impact Whey Protein",
+                    Description = "With no unwanted surplus, this all-natural blend is full of essential amino acids and 22g of protein per serving for anyone who trains on a plant-based diet.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein3.png",
+                    Brand = "MyProtein",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Gold Standard Whey",
+                    Description = "One serving has a unique content of 82% high quality protein and 5.5 g of BCAAs",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein4.png",
+                    Brand = "OptimumNutrition",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Hidro Whey",
+                    Description = "Platinum Hydro-Whey is the fastest, purest and most advanced whey protein with 73% lactose-free protein",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein5.png",
+                    Brand = "OptimumNutrition",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Whey",
+                    Description = "Whey is the fastest, purest and most advanced whey protein with 78% lactose-free protein",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein6.png",
+                    Brand = "OptimumNutrition",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Essential Whey Protein",
+                    Description = "One of the three main macronutrients, protein facilitates muscle repair, growth and regeneration. It is recommended to achieve a regular intake of 20-30g of protein to stimulate the protein synthesis needed for this regeneration and growth",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein7.png",
+                    Brand = "HealthSpan",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Whey Protein",
+                    Description = "One of the three main macronutrients, protein facilitates muscle repair, growth and regeneration. ",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein8.png",
+                    Brand = "SiS",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Whey Protein Rego",
+                    Description = "Whey protein rego and isolate blend to increase and maintain lean muscle mass. ",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein9.png",
+                    Brand = "SiS",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Essential Whey Protein",
+                    Description = "Genius Nutrition® presents a new evolution of the purity and quality of protein isolated from naturally filtered whey, due to the manufacturing process of the raw material derived from whey from happy raised cows as it was given from nature without GMOs, chemical treatments, treatments hormones, pesticides or antibiotics.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Protein10.png",
+                    Brand = "Genius",
+                    Type = "Protein",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Creapure",
+                    Description = "Creatine improves physical performance by performing a series of short, high-intensity exercises.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Creatine1.png",
+                    Brand = "MyProtein",
+                    Type = "Creatine",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Creapure Plus",
+                    Description = "Creatine improves physical performance by performing a series of short, high-intensity exercises.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Creatine2.png",
+                    Brand = "MyProtein",
+                    Type = "Creatine",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Creapure Micro",
+                    Description = "Creapure micronized creatine provides the perfect boost to maximize results, whether you're lifting weights or getting ready for a strong start, our convenient capsules will push you to performance.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Creatine3.png",
+                    Brand = "MyProtein",
+                    Type = "Creatine",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Micronised Protein",
+                    Description = "Optimum Nutrition micronized powdered creatine is based on creatine monohydrate, specifically Creapure, a creatine monohydrate known for its exceptional purity. It has been micronized, so the powder mixes more easily and does not settle after being mixed in the liquid.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Creatine4.png",
+                    Brand = "OptimumNutrition",
+                    Type = "Creatine",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Micronised Protein Capsules",
+                    Description = "Optimum Nutrition micronized powdered creatine is based on creatine monohydrate, specifically Creapure, a creatine monohydrate known for its exceptional purity. It has been micronized, so the powder mixes more easily and does not settle after being mixed in the liquid.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Creatine5.png",
+                    Brand = "OptimumNutrition",
+                    Type = "Creatine",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Micronised Protein Capsules",
+                    Description = "Health Span micronized powdered creatine is based on creatine monohydrate, specifically Creapure.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Creatine6.png",
+                    Brand = "HealthSpan",
+                    Type = "Creatine",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Creatine Monohydrate",
+                    Description = "Sis powdered creatine is based on creatine monohydrate, specifically Creapure.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Creatine7.png",
+                    Brand = "Sis",
+                    Type = "Creatine",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Genius Creatine",
+                    Description = "Genius powdered creatine is based on creatine monohydrate, specifically Creapure.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Creatine8.png",
+                    Brand = "Genius",
+                    Type = "Creatine",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "The Pre-Workout",
+                    Description = "More vigilance and fuel for training with THE Pre-Workout. Designed with PhaseTech, our unique technology designed for gradual release, to optimize the administration of ingredients.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Pre1.png",
+                    Brand = "MyProtein",
+                    Type = "PreWorkout",
                     QuantityInStock = 100
                 },
                 new Product
                 {
                     Name = "Pre-Workout",
-                    Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-                    Price = 18000,
-                    PictureUrl = "/images/products/S-prew.png",
-                    Brand = "NetCore",
-                    Type = "Boards",
+                    Description = "Optimum Nutrition ON Gold Standard Pre Workout is an excellent mix to increase your energy level before training.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Pre2.png",
+                    Brand = "Genius",
+                    Type = "PreWorkout",
                     QuantityInStock = 100
                 },
                 new Product
                 {
-                    Name = "Multivitamine",
-                    Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                    Price = 30000,
-                    PictureUrl = "/images/products/S-vitamine.png",
-                    Brand = "NetCore",
-                    Type = "Boards",
+                    Name = "Pre-Go",
+                    Description = "Pre-Go is an excellent mix to increase your energy level before training.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Pre3.png",
+                    Brand = "SiS",
+                    Type = "PreWorkout",
                     QuantityInStock = 100
                 },
                 new Product
                 {
-                    Name = "Omega 3",
-                    Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 25000,
-                    PictureUrl = "/images/products/S-omega3.png",
-                    Brand = "React",
-                    Type = "Boards",
+                    Name = "Genius-Pre",
+                    Description = "Genius-Pre is an excellent mix to increase your energy level before training.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/Pre4.png",
+                    Brand = "Genius",
+                    Type = "PreWorkout",
                     QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Vegan Protein",
-                    Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 12000,
-                    PictureUrl = "/images/products/S-greens.png",
-                    Brand = "TypeScript",
-                    Type = "Boards",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Creatina Monohidratata",
-                    Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 1000,
-                    PictureUrl = "/images/products/S-creatina.png",
-                    Brand = "NetCore",
-                    Type = "Hats",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "CLA",
-                    Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 8000,
-                    PictureUrl = "/images/products/S-cla.png",
-                    Brand = "React",
-                    Type = "Hats",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Batoane proteice",
-                    Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 1500,
-                    PictureUrl = "/images/products/S-batoane.png",
-                    Brand = "React",
-                    Type = "Hats",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Tricou",
-                    Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 1800,
-                    PictureUrl = "/images/products/M-tricou.png",
-                    Brand = "VS Code",
-                    Type = "Gloves",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Pantaloni scurti",
-                    Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 1500,
-                    PictureUrl = "/images/products/M-pantaloni-scurti.png",
-                    Brand = "VS Code",
-                    Type = "Gloves",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Pantaloni lungi",
-                    Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 1600,
-                    PictureUrl = "/images/products/M-pantaloni.png",
-                    Brand = "React",
-                    Type = "Gloves",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Bluza",
-                    Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 1400,
-                    PictureUrl = "/images/products/M-bluza.png",
-                    Brand = "React",
-                    Type = "Gloves",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Hanorac",
-                    Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-                    Price = 25000,
-                    PictureUrl = "/images/products/F-hanorac.png",
-                    Brand = "Redis",
-                    Type = "Boots",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Colanti scurti",
-                    Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    Price = 18999,
-                    PictureUrl = "/images/products/F-colanti-scurti.png",
-                    Brand = "NetCore",
-                    Type = "Boots",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Colanti lungi",
-                    Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                    Price = 19999,
-                    PictureUrl = "/images/products/F-colanti.png",
-                    Brand = "NetCore",
-                    Type = "Boots",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Bluza",
-                    Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-                    Price = 15000,
-                    PictureUrl = "/images/products/F-bluza.png",
-                    Brand = "Angular",
-                    Type = "Boots",
-                    QuantityInStock = 100
-                },
-                new Product
-                {
-                    Name = "Geanta antrenament",
-                    Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-                    Price = 18000,
-                    PictureUrl = "/images/products/A-geanta.png",
-                    Brand = "Angular",
-                    Type = "Boots",
-                    QuantityInStock = 100
-                },
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             };
 
             foreach (var product in products)

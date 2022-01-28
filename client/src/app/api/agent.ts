@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
+import { config } from "process";
 import { toast } from "react-toastify";
 import { PaginatedResponse } from "../models/paginations";
 import { store } from "../store/configureStore";
@@ -10,11 +11,19 @@ axios.defaults.withCredentials = true;
 
 const responseBody = (response: AxiosResponse) => response.data; 
 
-// axios.interceptors.request.use(config => {
-//     const token = store.getState().account.user?.token;
-//     if (token) config.headers.Authorization = `Bearer ${token}`
-//     return config;
-// })
+
+//Folosesc interceptos ca sa adaug tokenul la fiecare request/ daca am un token
+axios.interceptors.request.use(config => {
+    if (!config) {
+        config = {};
+    }
+    if (!config.headers) {
+        config.headers = {};
+    }
+    const token = store.getState().account.user?.token;
+    if(config) config.headers.Authorization = `Bearer ${token}`;
+    return config;
+})
 
 axios.interceptors.response.use(async response => {
     await sleep();
@@ -85,11 +94,18 @@ const Account = {
     currentUser: () => request.get("account/currentUser"),
 }
 
+const Orders = {
+    list: () => request.get("orders"),
+    fetch: (id:number) => request.get(`orders/${id}`),
+    create: (values:any) => request.post("orders", values)
+}
+
 const agent = {
     Catalog,
     TestErrors,
     Basket,
-    Account
+    Account,
+    Orders
 }
 
 export default agent;

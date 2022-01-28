@@ -4,6 +4,12 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import App from "./app/layout/App";
 import { store } from "./app/store/configureStore";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// import { createBrowserHistory } from "history";
+
+// const history = createBrowserHistory();
+
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

@@ -1,7 +1,7 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import { singOut } from "../../features/account/accountSlice";
+import { signOut } from "../../features/account/accountSlice";
 import { clearBasket } from "../../features/basket/BasketSlice";
 import { useAppDispatch, useAppSelector } from "../store/configureStore";
 
@@ -33,7 +33,7 @@ export default function SignInMenu() {
                     component={Link}
                     to={"./"}
                     onClick={() => {
-                        dispatch(singOut());
+                        dispatch(signOut());
                         dispatch(clearBasket());
                     }}
                 >

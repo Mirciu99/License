@@ -60,7 +60,6 @@ export default function Login() {
                         margin="normal"
                         fullWidth
                         label="UserName"
-                        autoFocus
                         {...register("username", {
                             required: "Username is required",
                         })}
