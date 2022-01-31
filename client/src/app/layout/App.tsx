@@ -4,7 +4,7 @@ import {
     CssBaseline,
     ThemeProvider,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import AboutPage from "../../features/about/AboutPage";
@@ -18,33 +18,32 @@ import Header from "./Header";
 import "react-toastify/dist/ReactToastify.css";
 import NotFound from "../errors/NotFound";
 import BasketPage from "../../features/basket/BasketPage";
-import { getCookie } from "../util/util";
-import agent from "../api/agent";
 import LoadingComponent from "./LoadingComponent";
 import CheckoutPage from "../../features/checkout/CheckoutPage";
 import { useAppDispatch } from "../store/configureStore";
-import { setBasket } from "../../features/basket/BasketSlice";
+import { fetchBasketAsync } from "../../features/basket/BasketSlice";
 import Login from "../../features/account/Login";
 import Register from "../../features/account/Register";
 import { fetchCurrentUser } from "../../features/account/accountSlice";
 import PrivateRoute from "./PrivateRoute";
+import Orders from "../../features/orders/Orders";
 
 function App() {
     const dispatch = useAppDispatch();
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const buyerId = getCookie("buyerId");
-        dispatch(fetchCurrentUser());
-        if (buyerId) {
-            agent.Basket.get()
-                .then((basket) => dispatch(setBasket(basket)))
-                .catch((error) => console.log(error))
-                .finally(() => setLoading(false));
-        } else {
-            setLoading(false);
+    const initApp = useCallback(async () => {
+        try {
+            await dispatch(fetchCurrentUser());
+            await dispatch(fetchBasketAsync());
+        } catch (error) {
+            console.log(error);
         }
     }, [dispatch]);
+
+    useEffect(() => {
+        initApp().then(() => setLoading(false));
+    }, [initApp]);
 
     const [darkMode, SetDarkMode] = useState(false);
     const paletteType = darkMode ? "dark" : "light";
@@ -85,6 +84,7 @@ function App() {
                     />
                     <Route path="/basket" component={BasketPage} />
                     <PrivateRoute path="/checkout" component={CheckoutPage} />
+                    <PrivateRoute path="/orders" component={Orders} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
                     <Route component={NotFound} />

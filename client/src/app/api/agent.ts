@@ -1,5 +1,4 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { config } from "process";
 import { toast } from "react-toastify";
 import { PaginatedResponse } from "../models/paginations";
 import { store } from "../store/configureStore";
@@ -92,6 +91,7 @@ const Account = {
     login: (values:any) => request.post("account/login", values),
     register: (values:any) => request.post("account/register", values),
     currentUser: () => request.get("account/currentUser"),
+    fetchAddress: () => request.get("account/savedAddress")
 }
 
 const Orders = {

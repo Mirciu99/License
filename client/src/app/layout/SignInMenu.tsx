@@ -28,7 +28,9 @@ export default function SignInMenu() {
             </Button>
             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My orders</MenuItem>
+                <MenuItem component={Link} to="orders">
+                    My orders
+                </MenuItem>
                 <MenuItem
                     component={Link}
                     to={"./"}
