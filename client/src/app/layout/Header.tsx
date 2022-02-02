@@ -85,7 +85,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                         exact
                         sx={navStyles}
                     >
-                        Gym Store
+                        GYMARK
                     </Typography>
                     <Switch checked={darkMode} onChange={handleThemeChange} />
                 </Box>

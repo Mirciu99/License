@@ -1,5 +1,6 @@
-import { Typography } from "@mui/material";
+import { Button, Container, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 export default function HomePage() {
@@ -13,28 +14,6 @@ export default function HomePage() {
     return (
         <>
             <Slider {...settings}>
-                <div>
-                    <img
-                        src="/images/hero1.jpg"
-                        alt="first"
-                        style={{
-                            display: "block",
-                            width: "100%",
-                            maxHeight: 500,
-                        }}
-                    />
-                </div>
-                <div>
-                    <img
-                        src="/images/hero2.jpg"
-                        alt="first"
-                        style={{
-                            display: "block",
-                            width: "100%",
-                            maxHeight: 500,
-                        }}
-                    />
-                </div>
                 <div>
                     <img
                         src="/images/hero3.jpg"
@@ -51,6 +30,34 @@ export default function HomePage() {
             <Box display="flex" justifyContent="center" sx={{ p: 4 }}>
                 <Typography variant="h1">Welcome to our store!</Typography>
             </Box>
+            <Stack
+                spacing={2}
+                direction="row"
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+            >
+                <Button variant="outlined" component={Link} to="/catalog">
+                    Catalog
+                </Button>
+                <Button
+                    variant="outlined"
+                    component={Link}
+                    to="/calories_calculator"
+                >
+                    Calories Calculator
+                </Button>
+                <Button
+                    variant="outlined"
+                    component={Link}
+                    to="/carbs_cycling_calculator"
+                >
+                    Carbs Calculator
+                </Button>
+            </Stack>
+            <br />
+            <br />
+            <br />
         </>
     );
 }
