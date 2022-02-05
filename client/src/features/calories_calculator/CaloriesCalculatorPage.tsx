@@ -1,5 +1,4 @@
 import {
-    Box,
     Button,
     FormControlLabel,
     Grid,
@@ -10,31 +9,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-interface Props {
-    age: FormDataEntryValue | null;
-    height: FormDataEntryValue | null;
-    weight: FormDataEntryValue | null;
-    radio: FormDataEntryValue | null;
-    BMR: FormDataEntryValue | null;
-}
-
 export default function CaloriesCalculatorPage() {
-    // const [data, setData] = useState<Props>();
-    // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    //     event.preventDefault();
-    //     const data = new FormData(event.currentTarget);
-    //     setData({
-    //         age: data.get("age"),
-    //         height: data.get("height"),
-    //         weight: data.get("weight"),
-    //         radio: data.get("radio"),
-    //         BMR: data.get("BMR"),
-    //     });
-    // };
-    // if (data !== undefined)
-    //     console.log(data.age, data.BMR, data.height, data.radio, data.weight);
-    // console.log(data);
-
     const [age, setAge] = useState("");
     const [height, setHeight] = useState("");
     const [weight, setWeight] = useState("");
@@ -50,7 +25,7 @@ export default function CaloriesCalculatorPage() {
 
     const handleSubmit = () => {
         let x = 0;
-        if (genderN == 1) {
+        if (genderN === 1) {
             x =
                 (66.47 + 13.75 * weightN + 5.003 * heightN - 6.755 * ageN) *
                 bmrN;
@@ -64,12 +39,6 @@ export default function CaloriesCalculatorPage() {
     };
     return (
         <>
-            {/* <Box
-                component="form"
-                onSubmit={handleSubmit}
-                noValidate
-                sx={{ mt: 1 }}
-            > */}
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={12}>
                     <Typography variant="h3" textAlign="center">
@@ -191,7 +160,7 @@ export default function CaloriesCalculatorPage() {
                         required
                         disabled
                         name="weight-loss"
-                        value={result == 0 ? 0 : result - 300}
+                        value={result === 0 ? 0 : result - 300}
                         variant="standard"
                     />
                 </Grid>
@@ -210,13 +179,12 @@ export default function CaloriesCalculatorPage() {
                     <TextField
                         required
                         disabled
-                        value={result == 0 ? 0 : result + 400}
+                        value={result === 0 ? 0 : result + 400}
                         name="muscle-gain"
                         variant="standard"
                     />
                 </Grid>
             </Grid>
-            {/* </Box> */}
         </>
     );
 }

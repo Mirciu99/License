@@ -31,7 +31,7 @@ const midLinks = [
 
 const subMenu = [
     { title: "Calories Calculator", path: "/calories_calculator" },
-    { title: "Carb Cycling Calculator", path: "/carbs_cycling_calculator" },
+    // { title: "Carb Cycling Calculator", path: "/carbs_cycling_calculator" },
 ];
 
 const rightLinks = [
@@ -121,7 +121,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                                 }}
                                 size="small"
                             >
-                                Calculators
+                                Calculator
                             </Button>
                             <Menu
                                 id="basic-menu"

@@ -47,12 +47,8 @@ export default function HomePage() {
                 >
                     Calories Calculator
                 </Button>
-                <Button
-                    variant="outlined"
-                    component={Link}
-                    to="/carbs_cycling_calculator"
-                >
-                    Carbs Calculator
+                <Button variant="outlined" component={Link} to="/login">
+                    Login
                 </Button>
             </Stack>
             <br />

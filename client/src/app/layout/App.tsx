@@ -19,7 +19,6 @@ import "react-toastify/dist/ReactToastify.css";
 import NotFound from "../errors/NotFound";
 import BasketPage from "../../features/basket/BasketPage";
 import LoadingComponent from "./LoadingComponent";
-import CheckoutPage from "../../features/checkout/CheckoutPage";
 import { useAppDispatch } from "../store/configureStore";
 import { fetchBasketAsync } from "../../features/basket/BasketSlice";
 import Login from "../../features/account/Login";
@@ -27,6 +26,7 @@ import Register from "../../features/account/Register";
 import { fetchCurrentUser } from "../../features/account/accountSlice";
 import PrivateRoute from "./PrivateRoute";
 import Orders from "../../features/orders/Orders";
+import CheckoutWrapper from "../../features/checkout/CheckoutWrapper";
 
 function App() {
     const dispatch = useAppDispatch();
@@ -83,7 +83,10 @@ function App() {
                         component={CarbsCyclingCalculator}
                     />
                     <Route path="/basket" component={BasketPage} />
-                    <PrivateRoute path="/checkout" component={CheckoutPage} />
+                    <PrivateRoute
+                        path="/checkout"
+                        component={CheckoutWrapper}
+                    />
                     <PrivateRoute path="/orders" component={Orders} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
