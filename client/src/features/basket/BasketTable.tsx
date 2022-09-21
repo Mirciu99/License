@@ -10,6 +10,7 @@ import {
     TableBody,
     Box,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { BasketItem } from "../../app/models/basket";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import { removeBasketItemAsync, addBasketItemAsync } from "./BasketSlice";
@@ -22,15 +23,17 @@ interface Props {
 export default function BasketTable({ items, isBasket = true }: Props) {
     const { status } = useAppSelector((state) => state.basket);
     const dispatch = useAppDispatch();
+    const { t } = useTranslation();
+
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Product</TableCell>
-                        <TableCell align="right">Price</TableCell>
-                        <TableCell align="center">Quantity</TableCell>
-                        <TableCell align="right">Subtotal</TableCell>
+                        <TableCell>{t("Basket.1")}</TableCell>
+                        <TableCell align="right">{t("Basket.2")}</TableCell>
+                        <TableCell align="center">{t("Basket.3")}</TableCell>
+                        <TableCell align="right">{t("Basket.4")}</TableCell>
                         {isBasket && <TableCell align="right"></TableCell>}
                     </TableRow>
                 </TableHead>
@@ -58,7 +61,11 @@ export default function BasketTable({ items, isBasket = true }: Props) {
                                 </Box>
                             </TableCell>
                             <TableCell align="right">
-                                ${(item.price / 100).toFixed(2)}
+                                {t("Basket.5") === "$"
+                                    ? t("Basket.5") +
+                                      (item.price / 100).toFixed(2)
+                                    : ((item.price / 100) * 4.3).toFixed(2) +
+                                      t("Basket.5")}
                             </TableCell>
                             <TableCell align="center">
                                 {isBasket && (
@@ -105,10 +112,20 @@ export default function BasketTable({ items, isBasket = true }: Props) {
                                 )}
                             </TableCell>
                             <TableCell align="right">
-                                $
-                                {((item.price / 100) * item.quantity).toFixed(
+                                {t("Basket.5") === "$"
+                                    ? t("Basket.5") +
+                                      (
+                                          (item.price / 100) *
+                                          item.quantity
+                                      ).toFixed(2)
+                                    : (
+                                          (item.price / 100) *
+                                          item.quantity *
+                                          4.3
+                                      ).toFixed(2) + t("Basket.5")}
+                                {/* {((item.price / 100) * item.quantity).toFixed(
                                     2
-                                )}
+                                )} */}
                             </TableCell>
                             {isBasket && (
                                 <TableCell align="right">

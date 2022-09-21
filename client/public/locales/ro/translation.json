@@ -1,0 +1,135 @@
+{
+    "Calculator": {
+        "1":"Calculator Calorii"
+    },
+    "Nav-Title": {
+        "1": ["Produse", "Despre", "Contact"]
+    },
+    "Authentificare": {
+        "1": "Logare",
+        "2": "Inregistrare"
+    },
+    "Home": {
+        "1": "Bun venit in magazin !",
+        "2": "PRODUSE",
+        "3": "CALCULATOR CALORII",
+        "4": "LOGARE"
+    },
+    "Catalog": {
+        "1": "Cauta produs",
+        "2": "Filtreaza pretul",
+        "3": "Filtreaza brandul",
+        "4": "Filtreaza tipul",
+        "5":"Alfabetic",
+        "6":"Pret - Descrescator",
+        "7":"Pret - Crescator",
+        "8": "ADAUGA IN COS",
+        "9": "VIZUALIZARE"
+    },
+    "About": {
+        "1": "Despre noi",
+        "2": "Cum a inceput totul? ",
+        "3": "Totul a inceput cand am decis sa ajutam oamenii care au probleme in sala de forta, sau oamenii care aveau nevoie de un calculator ca sa puna masa musculara sau sa slabeasca.",
+        "4": "Ne-am dedicat sa cream un magazin online care nu contine doar suplimente, dar care contine si un calculator caloric pentru ca oamenii sa fie mai organizati si sa obtina rezultate mai bune.",
+        "5": "Targetul nostru este sa ajutam oamenii sa isi creasca increderea de sine."
+    },
+    "Contact": {
+        "1": "Numele",
+        "2": "Adresa de email",
+        "3": "Companie",
+        "4": "Contacteaza-ne",
+        "5": "Scrie un mesaj",
+        "6": "TRIMITE FORMULAR"
+    },
+    "Calories": {
+        "1": "Calculator calorii",
+        "2": "Varsta",
+        "3": "Inaltime(cm)",
+        "4": "Kilograme(kg)",
+        "5": "Sex",
+        "6": "Feminin",
+        "7": "Masculin",
+        "8": "Nivelul de activitate",
+        "9": "Sedentar: exerciții fizice reduse sau deloc",
+        "10": "Light: exercițiu de 1-3 ori pe săptămână",
+        "11": "Moderat: exercițiu de 4-5 ori pe săptămână",
+        "12": "Exerciții zilnice active sau exerciții intense de 3-4 ori pe săptămână",
+        "13": "Foarte activ: exerciții fizice intense de 6-7 ori pe săptămână",
+        "14": "Extra activ: exerciții foarte intense zilnic sau muncă fizică",
+        "15": "CALCULEAZA",
+        "16": "Calorii",
+        "17": "Pierdere în greutate",
+        "18": "Mentinere greutate",
+        "19": "Punere masa musculara"
+    },
+    "Login": {
+        "1": "Logare",
+        "2": "Nume de utilizator",
+        "3": "Parola",
+        "4": "LOGHEAZA-TE",
+        "5": "Nu ai un cont la noi? Creaza cont"
+    },
+    "Register": {
+        "1": "Inregistrare",
+        "2": "Nume de utilizator",
+        "3": "Adresa de email",
+        "4": "Parola",
+        "5": "INREGISTREAZA-TE",
+        "6": "Ai deja un cont la noi? Logheaza-te"
+    },
+    "Profile": {
+        "1": "Comenzile mele",
+        "2": "Delogare"
+    },
+    "Cos": {
+        "1": "Cosul tau este gol"
+    },
+    "Pret": {
+        "1": " RON"
+    },
+    "Basket": {
+        "1": "Produs",
+        "2": "Pret",
+        "3": "Cantitate",
+        "4": "Subtotal",
+        "5": " RON"
+    },
+    "Checkout": {
+        "1": "Subtotal",
+        "2": "Cost livrare*",
+        "3": "Total",
+        "4": "Comenzile peste 430 RON au livrarea gratuita",
+        "5": "Verificare comanda",
+        "6": "Adresa de livrare", 
+        "7": "Verifica-ti comanda", 
+        "8": "Detaliile de plata"
+    },
+    "Adress": {
+        "1": "Adresa de livrare",
+        "2": "Numele complet",
+        "3": "Adresa 1",
+        "4": "Adresa 2",
+        "5": "Oras",
+        "6": "Judet",
+        "7": "Cod postal",
+        "8": "Tara",
+        "9": "Salveaza adresa"
+    },
+    "Payment": {
+        "1": "Metoda de plata",
+        "2": "Nume de pe card",
+        "3": "Numarul cardului",
+        "4": "Data expirarii"
+    },
+    "Diverse": {
+        "1": "Verifica",
+        "2": "Urmator",
+        "3": "Inapoi",
+        "4": "Plaseaza comanda",
+        "5": "Numarul comenzii dumneavostra este ",
+        "6": "Incearca din nou",
+        "7": "Rezumatul comenzii",
+        "8": "V-ati inregistrat cu success",
+        "9": "Va multumim - comanda dumneavoastra a fost preluata"
+    }
+}

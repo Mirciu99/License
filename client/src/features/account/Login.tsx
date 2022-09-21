@@ -13,6 +13,7 @@ import { useForm, FieldValues } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import { useAppDispatch } from "../../app/store/configureStore";
 import { signInUser } from "./accountSlice";
+import { useTranslation } from "react-i18next";
 
 const theme = createTheme();
 
@@ -27,6 +28,7 @@ export default function Login() {
     } = useForm({
         mode: "all",
     });
+    const { t } = useTranslation();
 
     async function submitForm(data: FieldValues) {
         await dispatch(signInUser(data));
@@ -48,7 +50,7 @@ export default function Login() {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign in
+                    {t("Login.1")}
                 </Typography>
                 <Box
                     component="form"
@@ -59,7 +61,7 @@ export default function Login() {
                     <TextField
                         margin="normal"
                         fullWidth
-                        label="UserName"
+                        label={t("Login.2")}
                         {...register("username", {
                             required: "Username is required",
                         })}
@@ -69,7 +71,7 @@ export default function Login() {
                     <TextField
                         margin="normal"
                         fullWidth
-                        label="Password"
+                        label={t("Login.3")}
                         type="password"
                         {...register("password", {
                             required: "Password is required",
@@ -86,13 +88,11 @@ export default function Login() {
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
                     >
-                        Sign In
+                        {t("Login.4")}
                     </LoadingButton>
                     <Grid container>
                         <Grid item>
-                            <Link to="/register">
-                                {"Don't have an account? Sign Up"}
-                            </Link>
+                            <Link to="/register">{t("Login.5")}</Link>
                         </Grid>
                     </Grid>
                 </Box>

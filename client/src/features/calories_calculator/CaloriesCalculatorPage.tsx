@@ -8,6 +8,7 @@ import {
     Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function CaloriesCalculatorPage() {
     const [age, setAge] = useState("");
@@ -22,6 +23,7 @@ export default function CaloriesCalculatorPage() {
     const weightN = parseInt(weight);
     const genderN = parseInt(gender);
     const bmrN = parseFloat(bmr);
+    const { t }: { t: any } = useTranslation();
 
     const handleSubmit = () => {
         let x = 0;
@@ -42,14 +44,14 @@ export default function CaloriesCalculatorPage() {
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={12}>
                     <Typography variant="h3" textAlign="center">
-                        Calories Calculator
+                        {t("Calories.1")}
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <TextField
                         required
                         name="age"
-                        label="Age"
+                        label={t("Calories.2")}
                         autoComplete="given-name"
                         variant="standard"
                         onChange={(e) => setAge(e.target.value)}
@@ -59,7 +61,7 @@ export default function CaloriesCalculatorPage() {
                     <TextField
                         required
                         name="height"
-                        label="Height(cm)"
+                        label={t("Calories.3")}
                         autoComplete="given-name"
                         variant="standard"
                         onChange={(e) => setHeight(e.target.value)}
@@ -69,14 +71,14 @@ export default function CaloriesCalculatorPage() {
                     <TextField
                         required
                         name="weight"
-                        label="Weight(kg)"
+                        label={t("Calories.4")}
                         autoComplete="given-name"
                         variant="standard"
                         onChange={(e) => setWeight(e.target.value)}
                     />
                 </Grid>
                 <Grid item xs={12} sm={12}>
-                    <h4>Gender</h4>
+                    <h4>{t("Calories.5")}</h4>
                     <RadioGroup
                         defaultValue="2"
                         onChange={(e) => setGender(e.target.value)}
@@ -84,17 +86,17 @@ export default function CaloriesCalculatorPage() {
                         <FormControlLabel
                             value="2"
                             control={<Radio />}
-                            label="Female"
+                            label={t("Calories.6")}
                         />
                         <FormControlLabel
                             value="1"
                             control={<Radio />}
-                            label="Male"
+                            label={t("Calories.7")}
                         />
                     </RadioGroup>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <h4>Basal Metabolic Rate(BMR)</h4>
+                    <h4>{t("Calories.8")}</h4>
                     <RadioGroup
                         defaultValue="1.2"
                         onChange={(e) => setBmr(e.target.value)}
@@ -102,34 +104,32 @@ export default function CaloriesCalculatorPage() {
                         <FormControlLabel
                             value="1.2"
                             control={<Radio />}
-                            label="Sedentary: little or no exercise"
+                            label={t("Calories.9")}
                         />
                         <FormControlLabel
                             value="1.375"
                             control={<Radio />}
-                            label="Light: exercise 1-3 times / week"
+                            label={t("Calories.10")}
                         />
                         <FormControlLabel
                             value="1.55"
                             control={<Radio />}
-                            label="Moderate: exercise 4-5 times / week"
+                            label={t("Calories.11")}
                         />
                         <FormControlLabel
                             value="1.725"
                             control={<Radio />}
-                            label="Active daily exercise or intense exercise 3-4 times
-                                / week"
+                            label={t("Calories.12")}
                         />
                         <FormControlLabel
                             value="1.9"
                             control={<Radio />}
-                            label="Very Active: intense exercise 6-7 times / week"
+                            label={t("Calories.13")}
                         />
                         <FormControlLabel
                             value="2"
                             control={<Radio />}
-                            label="Extra Active: very intense exercise daily, or
-                                physical job"
+                            label={t("Calories.14")}
                         />
                     </RadioGroup>
                 </Grid>
@@ -149,13 +149,13 @@ export default function CaloriesCalculatorPage() {
                         sx={{ mt: 3, mb: 2 }}
                         onClick={handleSubmit}
                     >
-                        Calculate
+                        {t("Calories.15")}
                     </Button>
                 </Grid>
 
-                <h4>Calories </h4>
+                <h4>{t("Calories.16")} </h4>
                 <Grid item xs={12} sm={3}>
-                    <h4>Weight loss</h4>
+                    <h4>{t("Calories.17")}</h4>
                     <TextField
                         required
                         disabled
@@ -165,7 +165,7 @@ export default function CaloriesCalculatorPage() {
                     />
                 </Grid>
                 <Grid item xs={12} sm={3}>
-                    <h4>Maintain weight</h4>
+                    <h4>{t("Calories.18")}</h4>
                     <TextField
                         required
                         disabled
@@ -175,7 +175,7 @@ export default function CaloriesCalculatorPage() {
                     />
                 </Grid>
                 <Grid item xs={12} sm={3}>
-                    <h4>Muscle gain</h4>
+                    <h4>{t("Calories.19")}</h4>
                     <TextField
                         required
                         disabled

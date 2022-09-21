@@ -10,6 +10,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { StripeInput } from "./StripeInput";
 import { StripeElementType } from "@stripe/stripe-js";
+import { useTranslation } from "react-i18next";
 
 interface Props {
     cardState: {
@@ -20,17 +21,18 @@ interface Props {
 
 export default function PaymentForm({ cardState, onCardInputChange }: Props) {
     const { control } = useFormContext();
+    const { t } = useTranslation();
 
     return (
         <>
             <Typography variant="h6" gutterBottom>
-                Payment method
+                {t("Payment.1")}
             </Typography>
             <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
                     <AppTextInput
                         name="nameOnCard"
-                        label="Name on card"
+                        label={t("Payment.2")}
                         control={control}
                     />
                 </Grid>
@@ -40,7 +42,7 @@ export default function PaymentForm({ cardState, onCardInputChange }: Props) {
                         error={!!cardState.elementError.cardNumber}
                         helperText={cardState.elementError.cardNumber}
                         id="cardNumber"
-                        label="Card number"
+                        label={t("Payment.3")}
                         fullWidth
                         autoComplete="cc-number"
                         variant="outlined"
@@ -59,7 +61,7 @@ export default function PaymentForm({ cardState, onCardInputChange }: Props) {
                         error={!!cardState.elementError.cardExpiry}
                         helperText={cardState.elementError.cardExpiry}
                         id="expDate"
-                        label="Expiry date"
+                        label={t("Payment.4")}
                         fullWidth
                         autoComplete="cc-exp"
                         variant="outlined"

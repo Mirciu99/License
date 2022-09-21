@@ -24,10 +24,11 @@ import {
     useElements,
     useStripe,
 } from "@stripe/react-stripe-js";
-
-const steps = ["Shipping address", "Review your order", "Payment details"];
+import { useTranslation } from "react-i18next";
 
 export default function CheckoutPage() {
+    const { t } = useTranslation();
+    const steps = [t("Checkout.6"), t("Checkout.7"), t("Checkout.8")];
     const [activeStep, setActiveStep] = useState(0);
     const [orderNumber, setOrderNumber] = useState(0);
     const [loading, setLoading] = useState(false);
@@ -122,7 +123,7 @@ export default function CheckoutPage() {
                 });
                 setOrderNumber(orderNumber);
                 setPaymentSucceded(true);
-                setPaymentMessage("Thank you - we have received your payment");
+                setPaymentMessage(t("Diverse.9"));
                 setActiveStep(activeStep + 1);
                 dispatch(clearBasket());
                 setLoading(false);
@@ -170,7 +171,7 @@ export default function CheckoutPage() {
                 sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
             >
                 <Typography component="h1" variant="h4" align="center">
-                    Checkout
+                    {t("Checkout.5")}
                 </Typography>
                 <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
                     {steps.map((label) => (
@@ -187,17 +188,14 @@ export default function CheckoutPage() {
                             </Typography>
                             {paymentSucceded ? (
                                 <Typography variant="subtitle1">
-                                    Your order number is {orderNumber}. We have
-                                    emailed your order confirmation, and will
-                                    send you an update when your order has
-                                    shipped.
+                                    {t("Diverse.5")} {orderNumber}.
                                 </Typography>
                             ) : (
                                 <Button
                                     variant="contained"
                                     onClick={handleBack}
                                 >
-                                    Go back and try again
+                                    {t("Diverse.6")}
                                 </Button>
                             )}
                         </>
@@ -215,7 +213,7 @@ export default function CheckoutPage() {
                                         onClick={handleBack}
                                         sx={{ mt: 3, ml: 1 }}
                                     >
-                                        Back
+                                        {t("Diverse.3")}
                                     </Button>
                                 )}
                                 <LoadingButton
@@ -226,8 +224,8 @@ export default function CheckoutPage() {
                                     sx={{ mt: 3, ml: 1 }}
                                 >
                                     {activeStep === steps.length - 1
-                                        ? "Place order"
-                                        : "Next"}
+                                        ? t("Diverse.4")
+                                        : t("Diverse.2")}
                                 </LoadingButton>
                             </Box>
                         </form>

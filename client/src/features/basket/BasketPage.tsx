@@ -1,4 +1,5 @@
 import { Button, Grid, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../app/store/configureStore";
 import BasketSummary from "./BasketSummary";
@@ -6,9 +7,9 @@ import BasketTable from "./BasketTable";
 
 export default function BasketPage() {
     const { basket } = useAppSelector((state) => state.basket);
+    const { t } = useTranslation();
 
-    if (!basket)
-        return <Typography variant="h3">Your basket is empty</Typography>;
+    if (!basket) return <Typography variant="h3">{t("Cos.1")}</Typography>;
 
     return (
         <>
@@ -24,7 +25,7 @@ export default function BasketPage() {
                         size="large"
                         fullWidth
                     >
-                        Checkout
+                        {t("Diverse.1")}
                     </Button>
                 </Grid>
             </Grid>

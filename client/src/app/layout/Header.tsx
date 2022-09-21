@@ -17,27 +17,29 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAppSelector } from "../store/configureStore";
 import SignInMenu from "./SignInMenu";
+import { useTranslation } from "react-i18next";
 
 interface Props {
     darkMode: boolean;
     handleThemeChange: () => void;
+    handleClickLang: (val: string) => void;
 }
 
-const midLinks = [
-    { title: "Catalog", path: "/catalog" },
-    { title: "About", path: "/about" },
-    { title: "Contact", path: "/contact" },
-];
+// const midLinks = [
+//     { title: "Catalog", path: "/catalog" },
+//     { title: "About", path: "/about" },
+//     { title: "Contact", path: "/contact" },
+// ];
 
-const subMenu = [
-    { title: "Calories Calculator", path: "/calories_calculator" },
-    // { title: "Carb Cycling Calculator", path: "/carbs_cycling_calculator" },
-];
+// const subMenu = [
+//     { title: "Calories Calculator", path: "/calories_calculator" },
+//     // { title: "Carb Cycling Calculator", path: "/carbs_cycling_calculator" },
+// ];
 
-const rightLinks = [
-    { title: "Login", path: "/login" },
-    { title: "Register", path: "/register" },
-];
+// const rightLinks = [
+//     { title: "Login", path: "/login" },
+//     { title: "Register", path: "/register" },
+// ];
 
 const navStyles = [
     {
@@ -51,13 +53,18 @@ const navStyles = [
     },
 ];
 
-export default function Header({ darkMode, handleThemeChange }: Props) {
+export default function Header({
+    darkMode,
+    handleThemeChange,
+    handleClickLang,
+}: Props) {
     const { basket } = useAppSelector((state) => state.basket);
     const { user } = useAppSelector((state) => state.account);
     const itemCount = basket?.items.reduce(
         (sum, item) => sum + item.quantity,
         0
     );
+    const { t, i18n } = useTranslation();
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -88,11 +95,23 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                         GYMARK
                     </Typography>
                     <Switch checked={darkMode} onChange={handleThemeChange} />
+                    <Button
+                        sx={{ color: "white" }}
+                        onClick={() => handleClickLang("en")}
+                    >
+                        English
+                    </Button>
+                    <Button
+                        sx={{ color: "white" }}
+                        onClick={() => handleClickLang("ro")}
+                    >
+                        Romanian
+                    </Button>
                 </Box>
 
                 <Box textTransform="none">
                     <List sx={{ display: "flex" }}>
-                        {midLinks.map(({ title, path }) => (
+                        {/* {midLinks.map(({ title, path }) => (
                             <ListItem
                                 component={NavLink}
                                 to={path}
@@ -101,7 +120,31 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                             >
                                 {title}
                             </ListItem>
-                        ))}
+                        ))} */}
+                        <ListItem
+                            component={NavLink}
+                            to="/catalog"
+                            key="/catalog"
+                            sx={navStyles}
+                        >
+                            {t("Nav-Title.1.0")}
+                        </ListItem>
+                        <ListItem
+                            component={NavLink}
+                            to="/about"
+                            key="/about"
+                            sx={navStyles}
+                        >
+                            {t("Nav-Title.1.1")}
+                        </ListItem>
+                        <ListItem
+                            component={NavLink}
+                            to="/contact"
+                            key="/contact"
+                            sx={navStyles}
+                        >
+                            {t("Nav-Title.1.2")}
+                        </ListItem>
                         <ListItem>
                             <Button
                                 id="basic-button"
@@ -132,7 +175,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                                     "aria-labelledby": "basic-button",
                                 }}
                             >
-                                {subMenu.map(({ title, path }) => (
+                                {/* {subMenu.map(({ title, path }) => (
                                     <MenuItem
                                         onClick={handleClose}
                                         component={NavLink}
@@ -142,7 +185,16 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                                     >
                                         {title}
                                     </MenuItem>
-                                ))}
+                                ))} */}
+                                <MenuItem
+                                    onClick={handleClose}
+                                    component={NavLink}
+                                    to="/calories_calculator"
+                                    key="/calories_calculator"
+                                    sx={navStyles}
+                                >
+                                    {t("Calculator.1")}
+                                </MenuItem>
                             </Menu>
                         </ListItem>
                     </List>
@@ -163,7 +215,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                         <SignInMenu />
                     ) : (
                         <List sx={{ display: "flex" }}>
-                            {rightLinks.map(({ title, path }) => (
+                            {/* {rightLinks.map(({ title, path }) => (
                                 <ListItem
                                     component={NavLink}
                                     to={path}
@@ -172,7 +224,23 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                                 >
                                     {title}
                                 </ListItem>
-                            ))}
+                            ))} */}
+                            <ListItem
+                                component={NavLink}
+                                to="/login"
+                                key="/login"
+                                sx={navStyles}
+                            >
+                                {t("Authentificare.1")}
+                            </ListItem>
+                            <ListItem
+                                component={NavLink}
+                                to="/register"
+                                key="/register"
+                                sx={navStyles}
+                            >
+                                {t("Authentificare.2")}
+                            </ListItem>
                         </List>
                     )}
                 </Box>

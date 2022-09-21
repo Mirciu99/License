@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import agent from "../../app/api/agent";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const theme = createTheme();
 
@@ -26,6 +27,7 @@ export default function Register() {
     } = useForm({
         mode: "all",
     });
+    const { t } = useTranslation();
 
     function handleApiErrors(errors: any) {
         if (errors) {
@@ -56,16 +58,14 @@ export default function Register() {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Register
+                    {t("Register.1")}
                 </Typography>
                 <Box
                     component="form"
                     onSubmit={handleSubmit((data) =>
                         agent.Account.register(data)
                             .then(() => {
-                                toast.success(
-                                    "Registration successful - you can now login"
-                                );
+                                toast.success(t("Diverse.8"));
                                 history.push("/login");
                             })
                             .catch((error) => handleApiErrors(error))
@@ -76,7 +76,7 @@ export default function Register() {
                     <TextField
                         margin="normal"
                         fullWidth
-                        label="UserName"
+                        label={t("Register.2")}
                         autoFocus
                         {...register("username", {
                             required: "Username is required",
@@ -87,7 +87,7 @@ export default function Register() {
                     <TextField
                         margin="normal"
                         fullWidth
-                        label="Email address"
+                        label={t("Register.3")}
                         {...register("email", {
                             required: "Email is required",
                             pattern: {
@@ -101,7 +101,7 @@ export default function Register() {
                     <TextField
                         margin="normal"
                         fullWidth
-                        label="Password"
+                        label={t("Register.4")}
                         type="password"
                         {...register("password", {
                             required: "Password is required",
@@ -122,13 +122,11 @@ export default function Register() {
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
                     >
-                        Register
+                        {t("Register.5")}
                     </LoadingButton>
                     <Grid container>
                         <Grid item>
-                            <Link to="/login">
-                                {"Already have an account? Sign In"}
-                            </Link>
+                            <Link to="/login">{t("Register.6")}</Link>
                         </Grid>
                     </Grid>
                 </Box>

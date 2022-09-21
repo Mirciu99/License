@@ -1,5 +1,6 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { signOut } from "../../features/account/accountSlice";
 import { clearBasket } from "../../features/basket/BasketSlice";
@@ -16,6 +17,7 @@ export default function SignInMenu() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const { t } = useTranslation();
 
     return (
         <>
@@ -27,9 +29,9 @@ export default function SignInMenu() {
                 {user?.email}
             </Button>
             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                {/* <MenuItem onClick={handleClose}>Profile</MenuItem> */}
                 <MenuItem component={Link} to="orders">
-                    My orders
+                    {t("Profile.1")}
                 </MenuItem>
                 <MenuItem
                     component={Link}
@@ -39,7 +41,7 @@ export default function SignInMenu() {
                         dispatch(clearBasket());
                     }}
                 >
-                    Logout
+                    {t("Profile.2")}
                 </MenuItem>
             </Menu>
         </>

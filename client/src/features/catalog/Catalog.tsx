@@ -1,5 +1,6 @@
 import { FormGroup, FormLabel, Grid, Paper } from "@mui/material";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import AddPagination from "../../app/components/AddPagination";
 import CheckboxButtons from "../../app/components/CheckboxButtons";
 import RadioButtonGroup from "../../app/components/RadioButtonGroup";
@@ -15,12 +16,6 @@ import {
 import ProductList from "./ProductList";
 import ProductSeacrh from "./ProductSeach";
 
-const sortOptions = [
-    { value: "name", label: "Alphabetical" },
-    { value: "priceDesc", label: "Price - High to low" },
-    { value: "price", label: "Price - Low to high" },
-];
-
 export default function Catalog() {
     const products = useAppSelector(productSelectors.selectAll);
     const {
@@ -32,8 +27,13 @@ export default function Catalog() {
         metaData,
     } = useAppSelector((state) => state.catalog);
     const dispatch = useAppDispatch();
-
-    console.log(products);
+    const { t } = useTranslation();
+    const sortOptions = [
+        { value: "name", label: t("Catalog.5") },
+        { value: "priceDesc", label: t("Catalog.6") },
+        { value: "price", label: t("Catalog.7") },
+    ];
+    //console.log(products);
 
     useEffect(() => {
         if (!productsLoaded) dispatch(fetchProductsAsync());
@@ -64,7 +64,7 @@ export default function Catalog() {
                     />
                 </Paper>
                 <Paper sx={{ md: 2, p: 2 }}>
-                    <FormLabel>Filter by brand</FormLabel>
+                    <FormLabel>{t("Catalog.3")}</FormLabel>
                     <CheckboxButtons
                         items={brands}
                         checked={productParams.brands}
@@ -75,7 +75,7 @@ export default function Catalog() {
                 </Paper>
                 <Paper sx={{ md: 2, p: 2 }}>
                     <FormGroup>
-                        <FormLabel>Filter by type</FormLabel>
+                        <FormLabel>{t("Catalog.4")}</FormLabel>
                         <CheckboxButtons
                             items={types}
                             checked={productParams.types}

@@ -1,7 +1,12 @@
 import { Button, Container, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+
+// interface Props {
+//     handleClickLang: (val: string) => void;
+// }
 
 export default function HomePage() {
     const settings = {
@@ -11,6 +16,7 @@ export default function HomePage() {
         slidesToShow: 1,
         slidesToScroll: 1,
     };
+    const { t } = useTranslation();
     return (
         <>
             <Slider {...settings}>
@@ -28,7 +34,7 @@ export default function HomePage() {
             </Slider>
 
             <Box display="flex" justifyContent="center" sx={{ p: 4 }}>
-                <Typography variant="h1">Welcome to our store!</Typography>
+                <Typography variant="h1">{t("Home.1")}</Typography>
             </Box>
             <Stack
                 spacing={2}
@@ -38,17 +44,17 @@ export default function HomePage() {
                 alignItems={"center"}
             >
                 <Button variant="outlined" component={Link} to="/catalog">
-                    Catalog
+                    {t("Home.2")}
                 </Button>
                 <Button
                     variant="outlined"
                     component={Link}
                     to="/calories_calculator"
                 >
-                    Calories Calculator
+                    {t("Home.3")}
                 </Button>
                 <Button variant="outlined" component={Link} to="/login">
-                    Login
+                    {t("Home.4")}
                 </Button>
             </Stack>
             <br />

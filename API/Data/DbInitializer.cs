@@ -41,7 +41,7 @@ namespace API.Data
                 {
                     Name = "The Whey",
                     Description = "Only the finest ingredients have been used to create this powder, which delivers 26g of protein per 32g serving via “beadlets” that gradually release muscle-building BCAAs.",
-                    Price = 20000,
+                    Price = 15000,
                     PictureUrl = "/images/products/Protein1.png",
                     Brand = "MyProtein",
                     Type = "Protein",
@@ -51,7 +51,7 @@ namespace API.Data
                 {
                     Name = "Impact Whey Protein",
                     Description = "Premium whey with 21 g of protein per serving, for the proteins you need from a quality source.",
-                    Price = 20000,
+                    Price = 15000,
                     PictureUrl = "/images/products/Protein2.png",
                     Brand = "MyProtein",
                     Type = "Protein",
@@ -61,7 +61,7 @@ namespace API.Data
                 {
                     Name = "Impact Whey Protein",
                     Description = "With no unwanted surplus, this all-natural blend is full of essential amino acids and 22g of protein per serving for anyone who trains on a plant-based diet.",
-                    Price = 20000,
+                    Price = 13000,
                     PictureUrl = "/images/products/Protein3.png",
                     Brand = "MyProtein",
                     Type = "Protein",
@@ -71,7 +71,7 @@ namespace API.Data
                 {
                     Name = "Gold Standard Whey",
                     Description = "One serving has a unique content of 82% high quality protein and 5.5 g of BCAAs",
-                    Price = 20000,
+                    Price = 14000,
                     PictureUrl = "/images/products/Protein4.png",
                     Brand = "OptimumNutrition",
                     Type = "Protein",
@@ -81,7 +81,7 @@ namespace API.Data
                 {
                     Name = "Hidro Whey",
                     Description = "Platinum Hydro-Whey is the fastest, purest and most advanced whey protein with 73% lactose-free protein",
-                    Price = 20000,
+                    Price = 11000,
                     PictureUrl = "/images/products/Protein5.png",
                     Brand = "OptimumNutrition",
                     Type = "Protein",
@@ -91,7 +91,7 @@ namespace API.Data
                 {
                     Name = "Whey",
                     Description = "Whey is the fastest, purest and most advanced whey protein with 78% lactose-free protein",
-                    Price = 20000,
+                    Price = 14500,
                     PictureUrl = "/images/products/Protein6.png",
                     Brand = "OptimumNutrition",
                     Type = "Protein",
@@ -101,7 +101,7 @@ namespace API.Data
                 {
                     Name = "Essential Whey Protein",
                     Description = "One of the three main macronutrients, protein facilitates muscle repair, growth and regeneration. It is recommended to achieve a regular intake of 20-30g of protein to stimulate the protein synthesis needed for this regeneration and growth",
-                    Price = 20000,
+                    Price = 10000,
                     PictureUrl = "/images/products/Protein7.png",
                     Brand = "HealthSpan",
                     Type = "Protein",
@@ -111,7 +111,7 @@ namespace API.Data
                 {
                     Name = "Whey Protein",
                     Description = "One of the three main macronutrients, protein facilitates muscle repair, growth and regeneration. ",
-                    Price = 20000,
+                    Price = 9000,
                     PictureUrl = "/images/products/Protein8.png",
                     Brand = "SiS",
                     Type = "Protein",
@@ -121,7 +121,7 @@ namespace API.Data
                 {
                     Name = "Whey Protein Rego",
                     Description = "Whey protein rego and isolate blend to increase and maintain lean muscle mass. ",
-                    Price = 20000,
+                    Price = 8000,
                     PictureUrl = "/images/products/Protein9.png",
                     Brand = "SiS",
                     Type = "Protein",
@@ -131,7 +131,7 @@ namespace API.Data
                 {
                     Name = "Essential Whey Protein",
                     Description = "Genius Nutrition® presents a new evolution of the purity and quality of protein isolated from naturally filtered whey, due to the manufacturing process of the raw material derived from whey from happy raised cows as it was given from nature without GMOs, chemical treatments, treatments hormones, pesticides or antibiotics.",
-                    Price = 20000,
+                    Price = 10500,
                     PictureUrl = "/images/products/Protein10.png",
                     Brand = "Genius",
                     Type = "Protein",
@@ -141,7 +141,7 @@ namespace API.Data
                 {
                     Name = "Creapure",
                     Description = "Creatine improves physical performance by performing a series of short, high-intensity exercises.",
-                    Price = 20000,
+                    Price = 5000,
                     PictureUrl = "/images/products/Creatine1.png",
                     Brand = "MyProtein",
                     Type = "Creatine",
@@ -151,7 +151,7 @@ namespace API.Data
                 {
                     Name = "Creapure Plus",
                     Description = "Creatine improves physical performance by performing a series of short, high-intensity exercises.",
-                    Price = 20000,
+                    Price = 6000,
                     PictureUrl = "/images/products/Creatine2.png",
                     Brand = "MyProtein",
                     Type = "Creatine",
@@ -161,7 +161,7 @@ namespace API.Data
                 {
                     Name = "Creapure Micro",
                     Description = "Creapure micronized creatine provides the perfect boost to maximize results, whether you're lifting weights or getting ready for a strong start, our convenient capsules will push you to performance.",
-                    Price = 20000,
+                    Price = 3000,
                     PictureUrl = "/images/products/Creatine3.png",
                     Brand = "MyProtein",
                     Type = "Creatine",
@@ -171,7 +171,7 @@ namespace API.Data
                 {
                     Name = "Micronised Protein",
                     Description = "Optimum Nutrition micronized powdered creatine is based on creatine monohydrate, specifically Creapure, a creatine monohydrate known for its exceptional purity. It has been micronized, so the powder mixes more easily and does not settle after being mixed in the liquid.",
-                    Price = 20000,
+                    Price = 4000,
                     PictureUrl = "/images/products/Creatine4.png",
                     Brand = "OptimumNutrition",
                     Type = "Creatine",
@@ -181,7 +181,7 @@ namespace API.Data
                 {
                     Name = "Micronised Protein Capsules",
                     Description = "Optimum Nutrition micronized powdered creatine is based on creatine monohydrate, specifically Creapure, a creatine monohydrate known for its exceptional purity. It has been micronized, so the powder mixes more easily and does not settle after being mixed in the liquid.",
-                    Price = 20000,
+                    Price = 4500,
                     PictureUrl = "/images/products/Creatine5.png",
                     Brand = "OptimumNutrition",
                     Type = "Creatine",
@@ -191,7 +191,7 @@ namespace API.Data
                 {
                     Name = "Micronised Protein Capsules",
                     Description = "Health Span micronized powdered creatine is based on creatine monohydrate, specifically Creapure.",
-                    Price = 20000,
+                    Price = 8500,
                     PictureUrl = "/images/products/Creatine6.png",
                     Brand = "HealthSpan",
                     Type = "Creatine",
@@ -201,9 +201,9 @@ namespace API.Data
                 {
                     Name = "Creatine Monohydrate",
                     Description = "Sis powdered creatine is based on creatine monohydrate, specifically Creapure.",
-                    Price = 20000,
+                    Price = 9500,
                     PictureUrl = "/images/products/Creatine7.png",
-                    Brand = "Sis",
+                    Brand = "SiS",
                     Type = "Creatine",
                     QuantityInStock = 100
                 },
@@ -211,7 +211,7 @@ namespace API.Data
                 {
                     Name = "Genius Creatine",
                     Description = "Genius powdered creatine is based on creatine monohydrate, specifically Creapure.",
-                    Price = 20000,
+                    Price = 6500,
                     PictureUrl = "/images/products/Creatine8.png",
                     Brand = "Genius",
                     Type = "Creatine",
@@ -221,7 +221,7 @@ namespace API.Data
                 {
                     Name = "The Pre-Workout",
                     Description = "More vigilance and fuel for training with THE Pre-Workout. Designed with PhaseTech, our unique technology designed for gradual release, to optimize the administration of ingredients.",
-                    Price = 20000,
+                    Price = 8000,
                     PictureUrl = "/images/products/Pre1.png",
                     Brand = "MyProtein",
                     Type = "PreWorkout",
@@ -231,7 +231,7 @@ namespace API.Data
                 {
                     Name = "Pre-Workout",
                     Description = "Optimum Nutrition ON Gold Standard Pre Workout is an excellent mix to increase your energy level before training.",
-                    Price = 20000,
+                    Price = 9000,
                     PictureUrl = "/images/products/Pre2.png",
                     Brand = "Genius",
                     Type = "PreWorkout",
@@ -241,7 +241,7 @@ namespace API.Data
                 {
                     Name = "Pre-Go",
                     Description = "Pre-Go is an excellent mix to increase your energy level before training.",
-                    Price = 20000,
+                    Price = 9500,
                     PictureUrl = "/images/products/Pre3.png",
                     Brand = "SiS",
                     Type = "PreWorkout",
@@ -251,7 +251,7 @@ namespace API.Data
                 {
                     Name = "Genius-Pre",
                     Description = "Genius-Pre is an excellent mix to increase your energy level before training.",
-                    Price = 20000,
+                    Price = 7500,
                     PictureUrl = "/images/products/Pre4.png",
                     Brand = "Genius",
                     Type = "PreWorkout",

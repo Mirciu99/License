@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
@@ -6,9 +6,7 @@ import App from "./app/layout/App";
 import { store } from "./app/store/configureStore";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import { createBrowserHistory } from "history";
-
-// const history = createBrowserHistory();
+import "./i18n";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -16,14 +14,13 @@ ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Provider store={store}>
-                <App />
+                <Suspense fallback={<div>Loading !!!</div>}>
+                    <App />
+                </Suspense>
             </Provider>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

@@ -8,6 +8,7 @@ import {
     Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ContactPage() {
     const [data, setData] = useState({});
@@ -21,6 +22,7 @@ export default function ContactPage() {
             message: data.get("message"),
         });
     };
+    const { t } = useTranslation();
     console.log(data);
 
     return (
@@ -34,7 +36,7 @@ export default function ContactPage() {
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={12}>
                         <Typography variant="h3" textAlign="center">
-                            Contact Us
+                            {t("Contact.4")}
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -42,7 +44,7 @@ export default function ContactPage() {
                             required
                             id="firstName"
                             name="firstName"
-                            label="First name"
+                            label={t("Contact.1")}
                             fullWidth
                             autoComplete="given-name"
                             variant="standard"
@@ -53,7 +55,7 @@ export default function ContactPage() {
                             required
                             id="emailAddress"
                             name="emailAddress"
-                            label="Email Address"
+                            label={t("Contact.2")}
                             fullWidth
                             autoComplete="given-name"
                             variant="standard"
@@ -63,7 +65,7 @@ export default function ContactPage() {
                         <TextField
                             id="company"
                             name="company"
-                            label="Company"
+                            label={t("Contact.3")}
                             fullWidth
                             autoComplete="given-name"
                             variant="standard"
@@ -73,7 +75,7 @@ export default function ContactPage() {
                         <TextareaAutosize
                             aria-label="minimum height"
                             minRows={1}
-                            placeholder="Message"
+                            placeholder={t("Contact.5")}
                             style={{ width: 600, height: 300 }}
                             required
                             name="message"
@@ -85,7 +87,7 @@ export default function ContactPage() {
                             variant="outlined"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Submit the form
+                            {t("Contact.6")}
                         </Button>
                     </Grid>
                 </Grid>

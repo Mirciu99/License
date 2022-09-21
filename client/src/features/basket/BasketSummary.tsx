@@ -6,6 +6,7 @@ import {
     TableRow,
     TableCell,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { useAppSelector } from "../../app/store/configureStore";
 import { currencyFormat } from "../../app/util/util";
 
@@ -15,6 +16,7 @@ interface Props {
 
 export default function BasketSummary({ subtotal }: Props) {
     const { basket } = useAppSelector((state) => state.basket);
+    const { t } = useTranslation();
     if (subtotal === undefined)
         subtotal =
             basket?.items.reduce(
@@ -29,19 +31,19 @@ export default function BasketSummary({ subtotal }: Props) {
                 <Table>
                     <TableBody>
                         <TableRow>
-                            <TableCell colSpan={2}>Subtotal</TableCell>
+                            <TableCell colSpan={2}>{t("Checkout.1")}</TableCell>
                             <TableCell align="right">
                                 {currencyFormat(subtotal)}
                             </TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell colSpan={2}>Delivery fee*</TableCell>
+                            <TableCell colSpan={2}>{t("Checkout.2")}</TableCell>
                             <TableCell align="right">
                                 {currencyFormat(deliveryFee)}
                             </TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell colSpan={2}>Total</TableCell>
+                            <TableCell colSpan={2}>{t("Checkout.3")}</TableCell>
                             <TableCell align="right">
                                 {currencyFormat(subtotal + deliveryFee)}
                             </TableCell>
@@ -49,7 +51,7 @@ export default function BasketSummary({ subtotal }: Props) {
                         <TableRow>
                             <TableCell>
                                 <span style={{ fontStyle: "italic" }}>
-                                    *Orders over $100 qualify for free delivery
+                                    *{t("Checkout.4")}
                                 </span>
                             </TableCell>
                         </TableRow>

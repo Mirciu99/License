@@ -27,6 +27,8 @@ import { fetchCurrentUser } from "../../features/account/accountSlice";
 import PrivateRoute from "./PrivateRoute";
 import Orders from "../../features/orders/Orders";
 import CheckoutWrapper from "../../features/checkout/CheckoutWrapper";
+import i18n from "../../i18n";
+import ReactGa from "react-ga";
 
 function App() {
     const dispatch = useAppDispatch();
@@ -59,6 +61,15 @@ function App() {
     function handleThemeChange() {
         SetDarkMode(!darkMode);
     }
+    function handleClickLang(lang: any) {
+        i18n.changeLanguage(lang);
+    }
+    useEffect(() => {
+        ReactGa.initialize("UA-222867122-3");
+        console.log("aici!");
+        //to report page view
+        ReactGa.pageview(window.location.pathname);
+    }, [darkMode]);
 
     if (loading) return <LoadingComponent message="Initialising..." />;
 
@@ -66,7 +77,11 @@ function App() {
         <ThemeProvider theme={theme}>
             <ToastContainer position="bottom-right" hideProgressBar />
             <CssBaseline />
-            <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
+            <Header
+                darkMode={darkMode}
+                handleThemeChange={handleThemeChange}
+                handleClickLang={handleClickLang}
+            />
             <Container>
                 <Switch>
                     <Route exact path="/" component={HomePage} />

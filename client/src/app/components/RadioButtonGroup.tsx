@@ -5,6 +5,7 @@ import {
     FormControlLabel,
     Radio,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface Props {
     options: any[];
@@ -17,9 +18,10 @@ export default function RadioButtonGroup({
     onChange,
     selectedValue,
 }: Props) {
+    const { t } = useTranslation();
     return (
         <FormControl>
-            <FormLabel>Filter the price</FormLabel>
+            <FormLabel>{t("Catalog.2")}</FormLabel>
             <RadioGroup onChange={onChange} value={selectedValue}>
                 {options.map(({ value, label }) => (
                     <FormControlLabel

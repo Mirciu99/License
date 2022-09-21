@@ -9,6 +9,7 @@ import {
     CardMedia,
     Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Product } from "../../app/models/product";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
@@ -22,7 +23,7 @@ interface Props {
 export default function ProductCart({ product }: Props) {
     const { status } = useAppSelector((state) => state.basket);
     const dispatch = useAppDispatch();
-
+    const { t } = useTranslation();
     return (
         <Card>
             <CardHeader
@@ -63,14 +64,14 @@ export default function ProductCart({ product }: Props) {
                     }
                     size="small"
                 >
-                    Add to cart
+                    {t("Catalog.8")}
                 </LoadingButton>
                 <Button
                     component={Link}
                     to={`/catalog/${product.id}`}
                     size="small"
                 >
-                    View
+                    {t("Catalog.9")}
                 </Button>
             </CardActions>
         </Card>

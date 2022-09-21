@@ -1,4 +1,5 @@
 import { Grid, Paper, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import Image from "../about/about1.jpg";
 
 export default function AboutPage() {
@@ -9,6 +10,7 @@ export default function AboutPage() {
         slidesToShow: 1,
         slidesToScroll: 1,
     };
+    const { t } = useTranslation();
     return (
         <Grid container columnSpacing={22}>
             <Grid item xs={12}>
@@ -16,26 +18,22 @@ export default function AboutPage() {
                     variant="h3"
                     sx={{ display: "flex", justifyContent: "center" }}
                 >
-                    About Us!
+                    {t("About.1")}
                 </Typography>
                 <br />
                 <br />
             </Grid>
             <Grid item xs={6}>
-                <Typography variant="h3">How did it all start?</Typography>
+                <Typography variant="h3">{t("About.2")}</Typography>
                 <Typography variant="h6" sx={{ width: "600px" }}>
                     <br />
-                    It all started when we decided to help people with problems
-                    in the gym or people who needed a professional computer to
-                    build muscle or lose weight.
+                    {t("About.3")}
                     <br />
                     <br />
-                    We took the time to create a store that not only contains
-                    supplements, but also computers so that people can document
-                    themselves more and more and have much better results.
+                    {t("About.4")}
                     <br />
                     <br />
-                    Our goal is to help people increase their self-confidence.
+                    {t("About.5")}
                 </Typography>
             </Grid>
             <Grid item xs={6} sx={{ mt: 12 }}>
