@@ -1,0 +1,135 @@
+{
+    "Calculator": {
+        "1":"Calories Calculator"
+    },
+    "Nav-Title": {
+        "1": ["Catalog", "About", "Contact"]
+    },
+    "Authentificare": {
+        "1": "Login",
+        "2": "Register"
+    },
+    "Home": {
+        "1": "Welcome to our store !",
+        "2": "CATALOG",
+        "3": "CALORIES CALCULATOR",
+        "4": "LOGIN"
+    },
+    "Catalog": {
+        "1": "Search products",
+        "2": "Filter the price",
+        "3": "Filter by brand",
+        "4": "Filter by type",
+        "5": "Alphabetical",
+        "6": "Price - High to low",
+        "7": "Price - Low to high",
+        "8": "ADD TO CART",
+        "9": "VIEW"
+    },
+    "About": {
+        "1": "About us",
+        "2": "How did it all start?",
+        "3": "It all started when we decided to help people with problems in the gym or people who needed a professional computer to build muscle or lose weight.",
+        "4": "We took the time to create a store that not only contains supplements, but also computers so that people can document themselves more and more and have much better results.",
+        "5": "Our goal is to help people increase their self-confidence."
+    },
+    "Contact": {
+        "1": "Full name",
+        "2": "Email address",
+        "3": "Company",
+        "4": "Contact us",
+        "5": "Message us",
+        "6": "SUBMIT THE FORM"
+    },
+    "Calories": {
+        "1": "Calories Calculator",
+        "2": "Age",
+        "3": "Height(cm)",
+        "4": "Weight(kg)",
+        "5": "Gender",
+        "6": "Female",
+        "7": "Male",
+        "8": "Activity level",
+        "9": "Sedentary: little or no exercise",
+        "10": "Light: exercise 1-3 times / week",
+        "11": "Moderate: exercise 4-5 times / week",
+        "12": "Active daily exercise or intense exercise 3-4 times / week",
+        "13": "Very Active: intense exercise 6-7 times / week",
+        "14": "Extra Active: very intense exercise daily, or physical job",
+        "15": "CALCULATE",
+        "16": "Calories",
+        "17": "Weight loss",
+        "18": "Maintain weight",
+        "19": "Muscle gain"
+    },
+    "Login": {
+        "1": "Sign in",
+        "2": "UserName",
+        "3": "Password",
+        "4": "SIGN IN",
+        "5": "Don't have an account? Sign Up"
+    },
+    "Register": {
+        "1": "Register",
+        "2": "UserName",
+        "3": "Email address",
+        "4": "Password",
+        "5": "SIGN IN",
+        "6": "Already have an account? Sign In"
+    },
+    "Profile": {
+        "1": "My orders",
+        "2": "Logout"
+    },
+    "Cos": {
+        "1": "Your basket is empty"
+    },
+    "Pret": {
+        "1": "$"
+    },
+    "Basket": {
+        "1": "Product",
+        "2": "Price",
+        "3": "Quantity",
+        "4": "Subtotal",
+        "5": "$"
+    },
+    "Checkout": {
+        "1": "Subtotal",
+        "2": "Delivery fee*",
+        "3": "Total",
+        "4": "Orders over $100 qualify for free delivery",
+        "5": "Checkout",
+        "6": "Shipping address", 
+        "7": "Review your order", 
+        "8": "Payment details"
+    },
+    "Adress": {
+        "1": "Shipping address",
+        "2": "Full name",
+        "3": "Address 1",
+        "4": "Address 2",
+        "5": "City",
+        "6": "State",
+        "7": "Zipcode",
+        "8": "Country",
+        "9": "Save this as the default address"
+    },
+    "Payment": {
+        "1": "Payment method",
+        "2": "Name on card",
+        "3": "Card number",
+        "4": "Expiry date"
+    },
+    "Diverse": {
+        "1": "Checkout",
+        "2": "Next",
+        "3": "Back",
+        "4": "Place order",
+        "5": "Your order number is",
+        "6": "Go back and try again",
+        "7": "Order summary",
+        "8": "Registration successful - you can now login",
+        "9": "Thank you - we have received your payment"
+    }
+}
